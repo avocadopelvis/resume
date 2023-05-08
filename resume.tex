@@ -1,0 +1,184 @@
+\documentclass[]{resume-openfont}
+
+\pagestyle{fancy}
+\resetHeaderAndFooter
+
+%--------------------------------------------------------------
+% Convenience command - make it easy to fill template
+
+% Create job position command. Parameters: company, position, location, when
+\newcommand{\resumeHeading}[4]{\runsubsection{#1}\descript{ | #2}\hfill\location{#3 | #4}\fakeNewLine}
+
+% Create education heading. Parameters: Name, degree, location, when
+\newcommand{\educationHeading}[4]{\runsubsection{#1}\hspace*{\fill}  \location{#3}\\
+\descript{#2}\hspace*{\fill}  \location{#4}\fakeNewLine}
+
+% Create project heading. Parameters: Name, link, Tech stack
+\newcommand{\projectHeading}[3]{\Project{#1}{#2}
+\location{#3}\\}
+
+\newcommand{\projectHeadingWithDate}[4]{\Project{#1}{#2}
+\descript{#3 | #4}\\}
+
+% Parameters: courses
+\newcommand{\courseWork}[1]{\textbf{\large{Relevant Coursework:}} #1}
+
+% Parameters: courses
+\newcommand{\teacherAssistant}[1]{\textbf{Teacher Assistant (TA):} #1}
+ 
+%--------------------------------------------------------------
+\begin{document}
+
+%--------------------------------------------------------------
+%     Profile
+%--------------------------------------------------------------
+\newcommand{\yourName}{Elvis Theyo}
+% How you want it to show up on the resume
+\newcommand{\yourWebsite}{elvistheyo.com}
+% vs how you want it to show up. If it's the same you can just replace "\yourWebsiteLink" with "yourWebsite"
+\newcommand{\yourWebsiteLink}{https://elvistheyo.vercel.app}
+\newcommand{\yourEmail}{elvistheyo@gmail.com}
+\newcommand{\yourPhone}{7629839732}
+\newcommand{\githubUserName}{avocadopelvis}
+\newcommand{\linkedInUserName}{elvistheyo}
+
+% An alternate profile section 
+% \alignProfileTable
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%     \ralewayBold{\href{\yourWebsiteLink}{\Large \yourName}} & 
+%     Email : \href{mailto:\yourEmail}{\yourEmail}
+%     \\
+%     \href{https://github.com/\githubUserName}{GitHub://\githubUserName} & 
+%     Mobile : \yourPhone
+%     \\
+%     \href{https://www.linkedin.com/in/\linkedInUserName}{LinkedIn://\linkedInUserName} & Website : \href{\yourWebsiteLink}{\yourWebsite}
+%     \\
+% \end{tabular*}
+
+\begin{center}
+    \fontsize{40pt}{60pt}{\customRalewayMedium{\yourName}} \\ \vspace{1pt}
+    % \customRalewayMedium
+    \large\customRalewayMedium\color{headings}
+    
+    \faKaggle\faGithub\enspace \href{https://github.com/\githubUserName}{{\githubUserName}} $|$ 
+    % \faGlobe\enspace
+    % \href{\yourWebsiteLink}{\yourWebsite}  $|$ 
+    \faLinkedin\enspace \href{https://www.linkedin.com/in/\linkedInUserName}{{linkedin.com/in/\linkedInUserName}} $|$
+    \faEnvelope\enspace\href{mailto:\yourEmail}{{\yourEmail}}  
+    % $|$  
+    % \faPhone \enspace \yourPhone \enspace
+    
+    
+
+\end{center}
+
+% \hrule
+
+%--------------------------------------------------------------
+%     Education
+%--------------------------------------------------------------
+\section{EDUCATION}
+% Put school first and degree second if your school is reputable
+\educationHeading{Indian Institute of Information Technology, Gwalior}{Bachelor \& Master of Technology, Information Technology}{India}{Expected May 2024}
+% Integrated B.Tech \& M.Tech, Information Technology
+\vspace{5pt}
+
+\courseWork{\\ Machine Learning \textbullet{} Natural Language Processing \textbullet{} Data Analytics \textbullet{} Data Mining \textbullet{} Database Management System  \\
+Data Structures \& Algorithms \textbullet{}  Software Engineering \textbullet{} Object-Oriented Programming \textbullet{} Probability \& Statistics} 
+
+
+% \sectionsep
+
+
+%--------------------------------------------------------------
+%     Experience
+%--------------------------------------------------------------
+
+\section{EXPERIENCE}
+
+% \resumeHeading{Research Intern}{Siemens}{May 2023 - Aug 2023}{Remote}
+% \sectionsep
+
+\resumeHeading{Data Science Intern}{Katonic.ai}{Feb 2023 - April 2023}{Remote}
+\begin{bullets}
+% \item Worked on a use case for estimating delinquencies in customer invoice payments to create early warning signals.
+\item Developed a predictive model for estimating customer invoice delinquencies to create early warning signals.
+% providing early warning signals to mitigate financial risk \& deployed the model on the Katonic Machine Learning Operations (MLOps) platform.
+\item  Performed Exploratory Data Analysis (EDA) \& utilized various boosting methods such as XGBoost, AdaBoost, etc.
+\item Explored the Katonic Machine Learning Operations (MLOps) platform documentation to implement use cases.
+\end{bullets}
+\sectionsep
+
+\resumeHeading{Research Intern}{Indian Institute of Technology Kharagpur}{May 2022 - July 2022}{Remote}
+\begin{bullets}
+\item Conducted research on the diagnosis of mental workload using electrocardiogram (ECG) signals \& Deep Learning.
+\item Performed data preprocessing using pandas to convert the filtered signal data into samples of 15 seconds each.
+% \item Augmented the signal data by adding noise in order to increase the size of the training dataset.
+\item Implemented a Fully Connected Neural Network and a 1D Convolutional Neural Network (CNN) using PyTorch to predict the n-back task being performed by a subject \& achieved a maximum test accuracy of 75.7 \% for 1D CNN.
+
+\end{bullets}
+\sectionsep
+
+\resumeHeading{Machine Learning Intern}{Feynn Labs}{Dec 2021 - Jan 2022}{Remote}
+\begin{bullets}
+\item{Developed a recommendation system to recommend books to users based on a book that they like.}
+\item{Measured the relationship between two book ratings by using the {Pearson Correlation Coefficient}.}
+\item{Determined the similarity between two users by implementing the k-Nearest Neighbors (kNN) Algorithm.}
+\end{bullets}
+% \sectionsep
+
+%--------------------------------------------------------------
+%     Projects
+%--------------------------------------------------------------
+\section{PROJECTS}
+
+\projectHeading{Federated Learning for Medical Image Segmentation}{https://github.com/avocadopelvis/BTP}{Python, OpenCV, TensorFlow}
+\location{Summer Project under: Dr. W Wilfred Godfrey}
+\begin{bullets}
+\item{Implemented an approach to Medical Image Segmentation using Federated Learning in order to preserve sensitive patient information, maintain data privacy and to enable collaboration between multiple research institutions.}
+\item Trained various variants of the U-Net architecture on the BraTS 2020 dataset in a federated setting to determine the best model and attained comparable segmentation performance to centralized models.
+\end{bullets}
+\sectionsep
+
+\projectHeading{Pandora - Therapeutic AI Assistant}{https://github.com/avocadopelvis/pandora}{Python, NLTK, TensorFlow, HTML, CSS, Flask}
+% \location{Minor Project under: Dr. W Wilfred Godfrey}
+\begin{bullets}
+\item{Created a Deep Learning chatbot to simulate a therapist to provide emotional support to people with depression.}
+\item{Utilized Natural Language Processing (NLP) techniques to perform text preprocessing on the text dataset.}
+\item{Trained the text dataset on a Recurrent Neural Network (RNN) using TensorFlow \& achieved an accuracy of 91.8\%.}
+% \item{Designed an interactive UI for the user to interact with the chatbot using Flask on the backend.}
+\end{bullets}
+\sectionsep
+
+\projectHeading{Deep Mozart - Music Generation using Deep Learning}{https://github.com/avocadopelvis/deep-mozart}{Python, music21, TensorFlow}
+\begin{bullets}
+\item{Extracted notes from MIDI files containing Mozart's compositions using the music21 library and created a corpus.}
+\item{Trained the corpus on Long short-term memory (LSTM) using TensorFlow \& achieved a training accuracy of 94.2\%.}
+\item{Generated music from the model using a random index in the seed data as a starting point to predict the next notes.}
+\end{bullets}
+
+%--------------------------------------------------------------
+%     Skills
+%--------------------------------------------------------------
+
+\section{SKILLS}
+\textbf{Languages: }{Python, SQL, R, LaTeX}
+    \\ \vspace{2pt}
+    \textbf{Tools: }{ MySQL, Linux, Git, Microsoft Excel, Google Colab, Visual Studio Code}
+    \\ \vspace{2pt}
+  \textbf{Libraries \& Frameworks: }{pandas, NumPy, scikit-learn, PyTorch, Keras, TensorFlow, Flask}
+ \\ \vspace{2pt}
+    \textbf{Machine Learning: }{Regression, Classification, Boosting, Clustering, Neural Networks (CNN, RNN, LSTM)}
+    %  \\ \vspace{2pt}
+    % \textbf{Deep Learning: }{Neural Network, CNN, RNN, LSTM}
+\sectionsep
+
+% A more concise alternate 
+% \begin{skillList}
+%     \doubleItem{Languages:}{Java, C++, Python, C\#, PHP, Prolog, Bash, C, Racket}%
+%     {Databases:}{SQL, MongoDB, Neo4j, DynamoDB}
+%     \\
+%     \doubleItem{Web Development:}{JavaScript, TypeScript, React, HTML/CSS}
+%     {Technology:}{Git, AWS, GCP, Azure, Docker, \LaTeX}%
+% \end{skillList}
+\end{document}
