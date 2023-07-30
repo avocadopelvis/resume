@@ -7,4 +7,4 @@ To make an image, paste the below code in 'latexmkrc':
 
 ``END { system('convert -density 600 -background white -flatten output.pdf resume.png'); }``
 
-![resume](https://user-images.githubusercontent.com/92647313/236775539-a93af7a5-bcef-41b4-9ebf-ae6041f40d3e.png)
+[Resume](https://drive.google.com/file/d/1EAaQ6tPSzJ21dLD5DEdvXnwje_zNkfDS/view)
